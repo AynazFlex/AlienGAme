@@ -8,7 +8,32 @@
     <title>GAME</title>
 </head>
 <body>
-    <div id="menu" class="menu">NEW GAME</div>
+    <div id="menu" class="menu">
+        <div class="new-game">NEW GAME</div>
+        <div class="setting">SETTING</div>
+    </div>
+    <div class="settings" style="display: none;">
+        <h3 class="name-set">Выберите космический корабль</h3>
+        <p class="name-set">Чтобы применить изменение нажмите на корабль</p>
+        <div class="item">
+            <img src="left.png" class="left">
+            <div class="swipe">
+                <div class="person-image">
+                    <img src="starship.png" class="image active">
+                </div>
+                <div class="person-image">
+                    <img src="starship1.png" class="image">
+                </div>
+                <div class="person-image">
+                    <img src="starship2.png" class="image">
+                </div>
+                <div class="person-image">
+                    <img src="starship3.png" class="image">
+                </div>
+            </div>
+            <img src="right.png" class="right">
+        </div>
+    </div>
     <span class="point-record">
         <span>HI</span>
         <span id="record">0</span>
