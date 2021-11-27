@@ -3,6 +3,11 @@
 document.body.style.backgroundSize = `${document.documentElement.clientWidth}px ${document.documentElement.clientHeight}px`;
 document.body.querySelector('.settings').style.backgroundSize = `${document.documentElement.clientWidth}px ${document.documentElement.clientHeight}px`;
 
+window.addEventListener('resize', () => {
+    document.body.style.backgroundSize = `${document.documentElement.clientWidth}px ${document.documentElement.clientHeight}px`;
+    document.body.querySelector('.settings').style.backgroundSize = `${document.documentElement.clientWidth}px ${document.documentElement.clientHeight}px`;
+});
+
 let enemies;
 let gun;
 let flag = 0;
@@ -11,6 +16,7 @@ let point = 0;
 document.body.querySelector('.new-game').onclick = () => {
     menu.style.display = "none";
     person.style.display = "block";
+    person.style.left = document.documentElement.clientWidth/2 - 25 + 'px';
 
     enemies = setInterval(() => {
         let enemi = document.createElement('img');
