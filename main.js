@@ -23,23 +23,19 @@ document.body.querySelector('.new-game').onclick = () => {
         enemi.src = "meteor.png";
         enemi.className = 'enemi';
         document.body.append(enemi);
-        enemi.style.top = -40 + 'px';
+        enemi.addEventListener('animationend', function hanler() {
+            enemi.remove();
+            person.style.display = '';
+            clearInterval(enemies);
+            clearInterval(gun);
+            menu.style.display = "";
+            person.ontouchstart = null;
+            flag = 1;
+            hightPoint();
+            removeEnemies();
+            enemi.removeEventListener('animationend', hanler)
+        });
         enemi.style.left = Math.random()*(document.documentElement.clientWidth - 40) + 'px';
-        let attack = setInterval(() => {
-            enemi.style.top = enemi.getBoundingClientRect().top + 5 + 'px';
-            if(enemi.getBoundingClientRect().bottom > document.documentElement.clientHeight - 50) {
-                enemi.remove();
-                clearInterval(attack);
-                person.style.display = '';
-                clearInterval(enemies);
-                clearInterval(gun);
-                menu.style.display = "";
-                person.ontouchstart = null;
-                flag = 1;
-                hightPoint();
-                removeEnemies();
-            }
-        }, 20);
     }, 500);
     
     person.ontouchstart = (event) => {

@@ -23,10 +23,22 @@ body {
   border-top-right-radius: 2px;
 }
 
+@keyframes anim {
+  from {
+    top: -40px;
+  }
+  to {
+    top: 100%;
+  }
+}
+
 .enemi {
   position: fixed;
   height: 40px;
   width: 40px;
+  animation-name: anim;
+  animation-duration: 4s;
+  animation-timing-function: linear;
 }
 
 .menu {
